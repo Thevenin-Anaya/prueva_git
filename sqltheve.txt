@@ -1,0 +1,198 @@
+actividad 6 y 7
+
+Python
+print('hola mundo')
+numeroEntero = 47
+numeroFloat = 12.45
+varStrings = 'Theveni Anaya'
+
+
+suma = numeroEntero + numeroFloat
+print (suma)
+resta = numeroEntero - numeroFloat
+mmultiplicacion = numeroEntero*numeroFloat
+division = numeroEntero/numeroFloat
+
+string1 = input ('¡Holaa!,¿como te va?:')
+string2 = input ('Que me cuentas que hay de nuevo?: ')
+string3 = input (string1 +'. '+ string2)
+
+print(string3)
+
+def condicionales():
+    numero = int(input)('escribe un numero')
+    if numero % 2 == 0:
+        print(f'el numero {numero} es PAR')
+    else:
+        print(f'el numero{numero} es iMPAR')
+def bucleFor():
+    lista =[1,2,3,4,5]
+    for l in range(len(lista)+1):
+        print(f'el cuadro de {1} es {l*l}')
+
+def bucleWile():
+    variabledeEntra = input('ingrese')
+    while (variabledeEntra != 's'):
+        variabledeEntra= input('Presione cualquier tecla, "s para salir"')
+    print('fin del bucle')
+
+
+
+def listadeEstudiantes():
+    listadeEstudiantes=['carlos','maria','eva','sergio','ana']
+    for lista in range(1,len(listadeEstudiantes)+1):
+        print(listadeEstudiantes[lista])
+
+def diccionarioContacto():
+    contactos = {
+
+        'nombre': 'Yangelica', 
+        'Correo': 'angelicaespeleta223@gmail.com'
+    }
+    print (contactos.items())
+    print (contactos.keys())
+    print (contactos.values())
+
+lista =[20,30,7,19] 
+def listas(elemento):
+    lista.append(elemento)
+    print(lista)
+
+def calculadora(): 
+    print('')
+    print('-- CALCULADORA --')
+    print('selecciona una operacion:')
+    print('1. Suma')
+    print('2. Resta')
+    print('3. Multiplicacion')
+    print('4. Division')
+    print('5. Salir')
+
+    opcion = input('Por favor, escribe el numero de la operacion. (1 al 4): ') 
+    
+    if opcion == '5':
+            print('Saliendo del programa. ¡Adios!')
+    else:
+        if opcion in ['1','2','3','4','5']:
+            numero1 = float(input('Escribe el primer numero: '))
+            numero2 = float(input('Escribe el segundo numero: '))
+
+            if opcion == '1':
+                print(f'El resultado de la suma de ({numero1} + {numero2}) es: {numero1 + numero2}')
+                print(f'{numero1} + {numero2} = {numero1 + numero2}')
+                calculadora()
+            elif opcion == '2':
+                print(f'Eel resultado de la resta de ({numero1} - {numero2}) es: {numero1 - numero2}')
+                print(f'{numero1} - {numero2} = {numero1 - numero2}')
+                calculadora()
+            elif opcion == '3':
+                print(f'El resultado de la multiplicacion de ({numero1} * {numero2}) es: {numero1 + numero2}')
+                print(f'{numero1} * {numero2} = {numero1 * numero2}')
+                calculadora()
+            elif opcion == '4':
+                if numero2 != 0: 
+                    print(f'El resultado de la division de ({numero1} / {numero2}) es: {numero1 / numero2}')
+                    print(f'{numero1} / {numero2} = {numero1 / numero2}')
+                    calculadora()
+                else: 
+                    print('No se puede dividir entre cero')
+                    calculadora()
+        else:
+            print('La opcion no es valida')
+      
+# juego de adivinanzas 
+from random import randint
+def adivinanzas():
+    numeroRandom = randint(1,10)
+    numero = 0
+    while( numero != numeroRandom):
+        numero = input('Adivina el numero del 1 - 10: ')
+        numero = int(numero)
+        if numero != numeroRandom:
+            if numero < numeroRandom:
+                print('el numero es mayor')
+            else:
+                print('el numero es menor')
+    print('felicitaciones, Adivinaste el numero')
+
+adivinanzas()
+
+bucleFor()
+
+
+
+actividad sql
+
+create database laboratorio;
+
+use laboratorio;
+
+create table estudiantes (
+Id_estudiantes int Primary key not null auto_increment,
+Nombre_est Varchar(50) not null,
+Edad_est INT,
+Ciudad_est varchar(50) not null
+);
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Alvaro Garrido", "20", "Barranquilla");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Camilo Suares", "21", "Riohacha");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Maria Gomez", "24", "cartagena");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("sergio florez", "23", "Riohacha");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Marta Gonzales", "19", "barranquilla");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Kevin Lozano", "22", "Riohacha");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Luis Medina", "22", "Riohacha");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Yasir Llanos", "23", "Santa Marta");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Melissa Gonzales", "23", "Riohacha");
+
+insert into estudiantes (Nombre_est,Edad_est,Ciudad_est)
+values ("Jorge cuello", "22", "Barranquilla");
+
+SELECT * FROM Estudiantes;
+
+SELECT * FROM Estudiantes WHERE ciudad = "Barranquilla";
+
+SELECT * FROM Estudiantes WHERE edad > 20;
+
+ mogo db:
+
+use laboratorio;
+
+// Insertar datos en la colección 'estudiantes'
+db.estudiantes.insertMany([
+    { Nombre_est: "Alvaro Garrido", Edad_est: 20, Ciudad_est: "Barranquilla" },
+    { Nombre_est: "Camilo Suares", Edad_est: 21, Ciudad_est: "Riohacha" },
+    { Nombre_est: "Maria Gomez", Edad_est: 24, Ciudad_est: "Cartagena" },
+    { Nombre_est: "Sergio Florez", Edad_est: 23, Ciudad_est: "Riohacha" },
+    { Nombre_est: "Marta Gonzales", Edad_est: 19, Ciudad_est: "Barranquilla" },
+    { Nombre_est: "Kevin Lozano", Edad_est: 22, Ciudad_est: "Riohacha" },
+    { Nombre_est: "Luis Medina", Edad_est: 22, Ciudad_est: "Riohacha" },
+    { Nombre_est: "Yasir Llanos", Edad_est: 23, Ciudad_est: "Santa Marta" },
+    { Nombre_est: "Melissa Gonzales", Edad_est: 23, Ciudad_est: "Riohacha" },
+    { Nombre_est: "Jorge Cuello", Edad_est: 22, Ciudad_est: "Barranquilla" }
+]);
+
+// Consultar todos los estudiantes
+db.estudiantes.find();
+
+// Consultar estudiantes donde la ciudad es "Barranquilla"
+db.estudiantes.find({ Ciudad_est: "Barranquilla" });
+
+// Consultar estudiantes con edad mayor a 20
+db.estudiantes.find({ Edad_est: { $gt: 20 } });
